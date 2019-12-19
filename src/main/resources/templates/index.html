@@ -4,7 +4,9 @@
 		<title>Good Thyme!</title>
 	</head>
 	<body>
-		<div th:insert="~{frag1 :: fragment1}">Hello</div>
-		<select th:insert="~{options :: options}"></select>
+		<div th:insert="${greeter} == 'James Buttock' ? ~{frag1 :: fragment1} : ~{frag2 :: fragment2}">Hello</div>
+		<select th:insert="~{${option_path} :: options}"></select>
+		<div th:if="${greeter} == 'James Buttock'">Buttock!</div>
+		<div th:if="${greeter} == 'James Buttocker'" th:remove="tag" style="font-weight:bold">Buttocker!</div>
 	</body>
 </html>

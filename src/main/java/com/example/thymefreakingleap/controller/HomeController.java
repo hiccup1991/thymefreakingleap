@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 	@GetMapping("/")
 	public String home(Model model) {
-		model.addAttribute("greeter", "James Buttock");
+		model.addAttribute("greeter", "James Buttocker");
+		model.addAttribute("option_path", "/foo/bar/options2.html");
 		return "index";
 	}
 }
