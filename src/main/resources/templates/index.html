@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Good Thyme!</title>
+	</head>
+	<body>
+		<div th:insert="~{frag1 :: fragment1}">Hello</div>
+		<select th:include="~{options :: options}"></select>
+	</body>
+</html>
