@@ -8,5 +8,11 @@
 		<select th:insert="~{${option_path} :: options}"></select>
 		<div th:if="${greeter} == 'James Buttock'">Buttock!</div>
 		<div th:if="${greeter} == 'James Buttocker'" th:remove="tag" style="font-weight:bold">Buttocker!</div>
+		<table>
+			<tr th:each="person : ${persons}">
+				<td th:inline="text">[[${person.name}]]</td>
+				<td th:inline="text">[[${person.age}]]</td>
+			</tr>
+		</table>
 	</body>
 </html>
