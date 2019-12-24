@@ -4,15 +4,30 @@
 		<title>Good Thyme!</title>
 	</head>
 	<body>
+       dssdd:<div th:utext="${someInlineHtml}" th:remove="tag"></div>
+       sssss:<div th:text="${someInlineHtml}" th:remove="tag"></div>
 		<div th:insert="${greeter} == 'James Buttock' ? ~{frag1 :: fragment1} : ~{frag2 :: fragment2}">Hello</div>
 		<select th:insert="~{${option_path} :: options}"></select>
-		<div th:if="${greeter} == 'James Buttock'">Buttock!</div>
+		<div th:if="${greeter} != ''">Buttock!</div>
 		<div th:if="${greeter} == 'James Buttocker'" th:remove="tag" style="font-weight:bold">Buttocker!</div>
-		<table>
-			<tr th:each="person : ${persons}">
-				<td th:inline="text">[[${person.name}]]</td>
-				<td th:inline="text">[[${person.age}]]</td>
+		<table th:if="${persons.size()} > 0">
+			<tr th:each="person : ${persons}" th:object="${person}">
+				<td th:inline="text">[[*{name}]]</td>
+				<td th:inline="text">[[*{age}]]</td>
 			</tr>
 		</table>
+        <table>
+         <thead>
+          <tr>
+           <th>Name</th>
+           <th>Age</th>
+          </tr>
+         </thead>
+         <tbody>
+          <div th:utext="${tableContent}" th:remove="tag"></div>
+         </tbody>
+        </table>
+        
+        <div th:utext="${someInlineHtml}" th:remove="tag"></div>
 	</body>
 </html>
