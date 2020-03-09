@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Test MyBatis</title>
+	</head>
+	<body>
+        <table>
+         <thead>
+          <tr>
+           <th>Name</th>
+		   <th>Age</th>
+		   <th>City</th>
+		   <th>Street</th>
+		   <th>PostalCode</th>
+          </tr>
+         </thead>
+         <tbody>
+          <div th:utext="${tableContent}"></div>
+         </tbody>
+        </table>
+	</body>
+</html>

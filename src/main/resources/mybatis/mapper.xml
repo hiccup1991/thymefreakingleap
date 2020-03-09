@@ -11,4 +11,10 @@
 		where
 		${chunk}  
 	</select>
+	<select id="testSelect2" resultType="hashmap">
+		select *
+		from employees
+		where
+		city = #{address.city}  
+	</select>
 </mapper>
